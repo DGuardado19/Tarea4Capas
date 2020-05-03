@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Product</title>
+</head>
+<body>
+	`<h1 class="htext">Product</h1>
+	
+	<form th:action="@{/validar}" th:object=${product} method="post">
+		<label>Codigo de producto: </label>
+		<input th:field="*{codigo}" type="number">
+		<span th:errors="*{codigo}" style="color:#FF0000"></span>
+		<br>
+		
+		<label>Nombre: </label>
+		<input th:field="*{nombre}" type="text"> 
+		<span th:errors="*{nombre}" style="color:#FF0000"></span>
+		<br>
+		
+		<label>Marca: </label> 
+		<input th:field="*{marca}" type="text">
+		<span th:errors="*{marca}" style="color:#FF0000"></span><br>
+		
+		<label>Descripcion: </label> 
+		<input th:field="*{descripcion}" type="text">
+		<span th:errors="*{descripcion}" style= "color: #FF0000"></span>
+		<br>
+				
+		<label>Existencias: </label> <br> 
+		<input th:field="*{existencias}" type="text"> 
+		<span th:errors="*{existencias}" style="color:#FF0000"></span>
+		<br>
+		
+		<label>Fecha de ingreso: </label>
+		<input th:field="*{fechaIngreso}" type="text" placeholder="dd/mm/yyyy"> 
+		<span th:errors="*{fechaIngreso}" style="color:#FF0000"></span>
+		<br>
+		
+		<input type="submit" value="Guardar">	
+		
+		</form>
+</body>
+</html>
